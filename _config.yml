@@ -1,0 +1,14 @@
+title: "chenxi'log"
+name: chenxi
+description: 在这里记录我的学习笔记
+
+theme: minima
+
+minima:
+  date_format: "%Y-%m-%d"
+
+header_pages:
+  - posts.md
+  - archive.md
+
+show_excerpts: true
