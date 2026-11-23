@@ -1,1 +1,4 @@
-
+{{ site.title }}
+{%- for p in site.header_pages -%} {%- assign sp = site.pages | where: "path", p | first -%} {%- if sp %}{{ sp.title }}{% endif -%} {%- endfor -%}
+{{ content }}
+© {{ site.time | date: "%Y" }} {{ site.title }} {{ site.name }}
