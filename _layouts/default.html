@@ -1,4 +1,32 @@
-{{ site.title }}
-{%- for p in site.header_pages -%} {%- assign sp = site.pages | where: "path", p | first -%} {%- if sp %}{{ sp.title }}{% endif -%} {%- endfor -%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <nav class="site-nav">
+    {%- for p in site.header_pages -%}
+      {%- assign sp = site.pages | where: "path", p | first -%}
+      {%- if sp %}<a href="{{ sp.url | relative_url }}">{{ sp.title }}</a>{% endif -%}
+    {%- endfor -%}
+  </nav>
+</header>
+
+<main class="content">
 {{ content }}
-© {{ site.time | date: "%Y" }} {{ site.title }} {{ site.name }}
+</main>
+
+<footer class="site-footer">
+  <span>© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+  <span>{{ site.name }}</span>
+</footer>
+
+</body>
+</html>
