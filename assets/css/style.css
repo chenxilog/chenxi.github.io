@@ -65,32 +65,39 @@ a:hover { text-decoration: underline; }
   padding: 36px 20px 60px;
 }
 
-/* ===== 首页文章列表：块状分布 + 间隔 ===== */
+/* ===== 首页文章列表：卡片式（仿 PaperMod） ===== */
 .post-list {
   display: flex;
   flex-direction: column;
-  gap: 34px;              /* 每篇文章之间的间隔，改这里调松紧 */
+  gap: 28px;              /* 卡片之间的间隔，改这里调松紧 */
 }
+.post-card {
+  background: #f6f7f8;    /* 卡片底色，想更浅改 #fafbfc，更深改 #eef0f2 */
+  border-radius: 12px;    /* 圆角大小 */
+  padding: 26px 30px;     /* 卡片内部留白：上下 26px，左右 30px */
+  transition: background 0.15s ease;
+}
+.post-card:hover { background: #eef0f2; }   /* 鼠标悬停时变深一点 */
 .post-card-title {
-  font-size: 1.18rem;
-  font-weight: 650;
-  line-height: 1.45;
-  margin: 0 0 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 12px;
 }
 .post-card-title a { color: var(--text); }
-.post-card-title a:hover { color: var(--link); text-decoration: none; }
+.post-card-title a:hover { color: var(--text); text-decoration: none; }
 .post-card-excerpt {
-  margin: 0 0 10px;
-  font-size: 0.94rem;
+  margin: 0 0 14px;
+  font-size: 0.95rem;
   line-height: 1.75;
   color: var(--text-2);
 }
 .post-card-meta {
   margin: 0;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-3);
 }
 
@@ -231,4 +238,3 @@ a:hover { text-decoration: underline; }
   .site-nav a { margin-left: 14px; }
   .post-list { gap: 28px; }
 }
-
