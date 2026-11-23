@@ -1,14 +1,18 @@
 title: "chenxi'log"
-name: chenxi
+name: chenxilog
 description: 在这里记录我的学习笔记
 
-theme: minima
-
-minima:
-  date_format: "%Y-%m-%d"
+# 不再使用主题，版式由 _layouts 和 assets/css/style.css 控制
 
 header_pages:
   - posts.md
   - archive.md
 
-show_excerpts: true
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
